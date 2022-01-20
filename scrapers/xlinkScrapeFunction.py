@@ -6,6 +6,11 @@ import socket
 import sys
 import re
 
+def cleanhtml(raw_html):
+  cleanr = re.compile('<.*?>')
+  cleantext = re.sub(cleanr, '', raw_html)
+  return cleantext
+
 def xlinkScrape(historicalXlinkStatsOutFile, xlinkCurrentH1OutFile, xlinkCurrentH2OutFile, xlinkCurrentH3OutFile,
 				xlinkCurrentH3ODSTOutFile, xlinkCurrentH4OutFile, xlinkCurrentReachOutFile, xlinkCurrentMCCOutFile,
 				xlinkCurrentTimeStampOutFile):
